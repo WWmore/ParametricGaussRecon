@@ -23,7 +23,9 @@ cmake ..
 * Run python run_pgr.py data/Armadillo_40000.xyz
 * If running successfully, three subfolders and corresponding files will be produced, where reconstructed mesh .ply in `recon` folder.
 
-
+### Conclusion
+Test a bonsai case, which has many thin parts and sharp corners. The produced mesh is bad, far away from the ideal one.
+![](assets/test.png)
 
 ----------------------------------------------------------------------
 # Parametric Gauss Reconstruction (PGR)
@@ -31,6 +33,8 @@ This repository contains the implementation of the paper:
 
 [**Surface Reconstruction from Point Clouds without Normals by Parametrizing the Gauss Formula (ACMTOG 2022)**](https://dl.acm.org/doi/10.1145/3554730)
 [Project page](https://jsnln.github.io/tog2022_pgr/index.html) | [Slides (SIGGRAPH 2023)](https://jsnln.github.io/tog2022_pgr/assets/pgr-pre.pdf)
+
+Related Research [Surface Reconstruction Based on the Modified Gauss Formula  (ACMTOG 2019)](https://doi.org/10.1145/3233984).
 
 ![](assets/pgr_teaser.png)
 
@@ -181,9 +185,4 @@ where
 - `grid_query.npy` and `grid_width.npy` are the output from the last stage.
 
 The meanings of other options should be straight-forward.
-
-## Related Research
-
-[Surface Reconstruction Based on the Modified Gauss Formula  (ACMTOG 2019)](https://doi.org/10.1145/3233984)
-Wenjia Lu, Zuoqiang Shi, Jian Sun,  Bin Wang
 
