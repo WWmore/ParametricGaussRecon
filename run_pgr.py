@@ -17,9 +17,17 @@ parser.add_argument('--cpu', action='store_true', help='run with cpu')
 parser.add_argument('--save_r', action='store_true', help='save the residual list')
 args = parser.parse_args()
 
-EXPORT_QUERY_EXE = './apps/PGRExportQuery'
-LOAD_QUERY_EXE = './apps/PGRLoadQuery'
-SOLVE_APP = 'apps.PGRSolve'
+path = 'C:/Users/NAME/ParametricGaussRecon' ##Hui add
+
+##Hui: step 1 # build octree ; ./samples/_query.npy + _normalized.npy
+EXPORT_QUERY_EXE = path + '/apps/PGRExportQuery'
+
+##Hui: step 2 # solve equation; ./solve/point_cloud.xyz 
+SOLVE_APP = 'PGRSolve' ##Hui copy RPGSolve from /apps/RGPSolve to main folder; change from 'apps.PGRSolve'
+
+##Hui: step 3 # reconstruction; ./recon/_.ply
+LOAD_QUERY_EXE = path + '/apps/PGRLoadQuery'
+
 PARAM_MIDFIX = f'_k_{args.width_k}_min_{args.width_min}_max_{args.width_max}_alpha_{args.alpha}_depth_min_{args.min_depth}_depth_max_{args.min_depth}_'
 
 setup_str = f'---------Settings---------\n'\
