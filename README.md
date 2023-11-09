@@ -1,10 +1,35 @@
+## Run the program by Hui
+
+* Open Anaconda Prompt
+```bash
+conda create -n PGR
+conda activate PGR
+conda install -c anaconda cmake make
+conda install numpy cupy scipy tqdm
+conda install cudatoolkit=11 -c conda-forge
+cd C:\Users\NAME\ParametricGaussRecon
+```
+
+* Open vscode in Anaconda and input below in terminal
+```bash
+mkdir build
+cd build
+cmake ..
+```
+
+* Open.sln, click build in vscode, then several files are produces
+* Move PGRExportQuery + PGRLoadQuery into folder apps
+* Change local path of `EXPORT_QUERY_EXE`, `SOLVE_APP`,`LOAD_QUERY_EXE` in run_pgr.py
+* Run python run_pgr.py data/Armadillo_40000.xyz
+* If running successfully, three subfolders and corresponding files will be produced, where reconstructed mesh .ply in `recon` folder.
+
+
+
+----------------------------------------------------------------------
 # Parametric Gauss Reconstruction (PGR)
 This repository contains the implementation of the paper:
 
 [**Surface Reconstruction from Point Clouds without Normals by Parametrizing the Gauss Formula (ACMTOG 2022)**](https://dl.acm.org/doi/10.1145/3554730)
-
-*[Siyou Lin](https://jsnln.github.io/), Dong Xiao, [Zuoqiang Shi](https://shizqi.github.io/), [Bin Wang](https://binwangthss.github.io/)*
-
 [Project page](https://jsnln.github.io/tog2022_pgr/index.html) | [Slides (SIGGRAPH 2023)](https://jsnln.github.io/tog2022_pgr/assets/pgr-pre.pdf)
 
 ![](assets/pgr_teaser.png)
